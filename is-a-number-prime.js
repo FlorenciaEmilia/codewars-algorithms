@@ -15,19 +15,15 @@ is_prime(-1)  false
 
 //My Solution:
 function isPrime(num) {
-  //TODO
   if (num < 2) {
     return false;
+  } else if (num === 2) {
+    return true;
   } else {
-    let divisor = 2;
-    while (divisor < 10) {
-      if (num % divisor == 0) {
-        if (divisor == num) {
-          return true;
-        }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i == 0) {
         return false;
       }
-      divisor++;
     }
     return true;
   }
